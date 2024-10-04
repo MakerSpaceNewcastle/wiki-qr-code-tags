@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  all-tags:
+    name: Make all tags
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install OpenSCAD
+        run: sudo apt install --yes openscad
+
+      - name: Make all tags
+        run: ./make-all.sh
