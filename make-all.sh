@@ -15,6 +15,7 @@ $OPENSCAD tag_text.scad -o "$out/2-text.stl"
 make-tag() {
   # Generate the URL to encode in the QR code
   url="https://wiki.makerspace.org.uk/$1"
+  echo "$url"
 
   # Make output directory for this tag
   tag_out="$out/$1"
